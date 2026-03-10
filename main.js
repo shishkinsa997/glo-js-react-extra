@@ -1,41 +1,11 @@
-// 1
-const lang = prompt("Enter language", "en");
-const ru = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"];
-const en = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
-// a
-if (lang === "en") {
-  console.log(en);
-} else if (lang === "ru") {
-  console.log(ru);
-} else {
-  console.log("Error");
-}
-// b
-switch (lang) {
-  case "en":
-    console.log(en);
-    break;
-  case "ru":
-    console.log(ru);
-    break;
-  default:
-    console.log("Error");
-    break;
-}
-// c
-const langs = { en, ru };
-lang === "en"
-  ? console.log(langs.en)
-  : lang === "ru"
-    ? console.log(langs.ru)
-    : console.log("Error");
+const str = '    qwertyuiop qwertyuiop qwertyuiop   '
 
-// 2
-const namePerson = prompt("Enter name", "Artem");
-console.log(
-  namePerson === "Artem"
-    ? "director"
-    : namePerson === "Alexander"
-      ? "teacher"
-      : "student",
-);
+const formatString = (str) => {
+  if (typeof str !== 'string') throw new Error(str)
+  str = str.trim()
+  if (str.length > 30) return str.slice(0, 30) + '...'
+  return str
+}
+const formatedStr = formatString(str)
+console.log(formatedStr, formatedStr.length);
+
