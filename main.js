@@ -1,11 +1,19 @@
-const str = '    qwertyuiop qwertyuiop qwertyuiop   '
+const arr = ["0", "1", "22", "333", "4444", "55555", "44.22"];
+arr.forEach((num) => {
+  num.startsWith("2") || num.startsWith("4") ? console.log(num) : null;
+});
 
-const formatString = (str) => {
-  if (typeof str !== 'string') throw new Error(str)
-  str = str.trim()
-  if (str.length > 30) return str.slice(0, 30) + '...'
-  return str
+function isPrime(n = 100) {
+  for (let i = 2; i <= n; i++) {
+    let prime = true;
+    for (let j = 2; j < i; j++) {
+      if (i % j === 0) prime = false;
+    }
+    if (prime) {
+      console.log(`divisors of ${i}: 1 and ${i}`);
+
+    }
+  }
 }
-const formatedStr = formatString(str)
-console.log(formatedStr, formatedStr.length);
 
+isPrime(100);
