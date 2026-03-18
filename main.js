@@ -1,19 +1,35 @@
-const arr = ["0", "1", "22", "333", "4444", "55555", "44.22"];
-arr.forEach((num) => {
-  num.startsWith("2") || num.startsWith("4") ? console.log(num) : null;
-});
+const week = [
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+  "Sunday",
+];
 
-function isPrime(n = 100) {
-  for (let i = 2; i <= n; i++) {
-    let prime = true;
-    for (let j = 2; j < i; j++) {
-      if (i % j === 0) prime = false;
-    }
-    if (prime) {
-      console.log(`divisors of ${i}: 1 and ${i}`);
+week.forEach((day, i) => {
+  const dayOfWeek = new Date().getDay();
+  let font
 
-    }
+  switch (i) {
+    case dayOfWeek:
+      font = 'b'
+      break;
+    case 5:
+    case 6:
+      font = 'i'
+      break;
+    default:
+      font = 'span'
+      break;
   }
-}
 
-isPrime(100);
+  const paragraph = document.createElement("p");
+  const text = document.createElement(font);
+
+  text.textContent = day;
+
+  paragraph.append(text);
+  document.body.append(paragraph);
+});
