@@ -9,7 +9,7 @@ const week = [
 ];
 
 week.forEach((day, i) => {
-  const dayOfWeek = new Date().getDay();
+  const dayOfWeek = new Date().getDay() - 1;
   let font
 
   switch (i) {
